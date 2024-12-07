@@ -59,11 +59,11 @@ func NewHandler(db Database, conf ServerConfig, tmpl *template.Template, jose *J
 
 	mux.HandleFunc("/u/", handleIndieAuthUser)
 
-	mux.HandleFunc("/logo.png", func(w http.ResponseWriter, r *http.Request) {
-		if conf.LogoPng != nil {
-			w.Header()["Content-Type"] = []string{"image/png"}
+	mux.HandleFunc("/logo.svg", func(w http.ResponseWriter, r *http.Request) {
+		if conf.LogoSvg != nil {
+			w.Header()["Content-Type"] = []string{"image/svg"}
 			w.Header()["Cache-Control"] = []string{"max-age=86400"}
-			w.Write(conf.LogoPng)
+			w.Write(conf.LogoSvg)
 			return
 		} else {
 			fsHandler.ServeHTTP(w, r)

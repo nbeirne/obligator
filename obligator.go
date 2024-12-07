@@ -58,7 +58,7 @@ type ServerConfig struct {
 	Users                  StringList
 	Public                 bool
 	ProxyType              string
-	LogoPng                []byte
+	LogoSvg                []byte
 	DisableQrLogin         bool
 	JwksJson               string
 	OAuth2Providers        []*OAuth2Provider `json:"oauth2_providers"`
