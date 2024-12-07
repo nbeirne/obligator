@@ -31,6 +31,7 @@ RUN apk --no-cache add ca-certificates && \
     adduser -S -G appuser -u 1001 appuser
 
 COPY --from=builder /app/obligator /obligator
+COPY assets/logo_obligator.svg /obligator/static/logo.svg
 
 RUN chown -R appuser:appuser /obligator
 
